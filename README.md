@@ -1,3 +1,5 @@
-* `sketch.js` - This is a JavaScript sketch I made in p5.js which is a mouse drawing tool focusing on interaction. It works in such a way that the mouse draws circles wherever it moves within the canvas. If the mouse
-                moves slowly across the canvas, the mouse will draw smaller circles. However, if the mouse move across the canvas really quickly, the mouse will draw larger circles.
-                Following this, the circles are coded to change colour when they change size.
+* `sketch.js` - This is a JavaScript sketch I made in p5.js which is a mouse drawing tool focusing on interaction. It works in such a way that the mouse draws circles wherever it moves within the                   canvas. If the mouse moves slowly across the canvas, the mouse will draw smaller circles. However, if the mouse move across the canvas really quickly, the mouse will draw larger circles.
+
+  How I did this is by using let speed = dist(mouseX, mouseY, pmouseX, pmouseY); which calculates the speed of the mouse by measuring the distance it has traveled since the last
+  frame. I then used let circleSize = map(speed, 0, 50, 10, 100, true); to calculate a new size for a circle by scaling a dynamic speed value from an original range into a new range.
+  Following this, the circles are coded to change colour when they change size. this is done with let r = map(speed, 0, 50, 225, 50, true); which takes the current value of speed and looks where it   falls between 0 and 50 to then calculate a corresponding value between 225 and 50, that being a new colour.
